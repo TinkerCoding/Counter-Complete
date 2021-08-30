@@ -43,6 +43,7 @@ const ListTodos = () => {
          <thead>
           <tr>
             <th>Description</th>
+            <th>Quantity</th>
             <th>Edit</th>
             <th>Delete</th>
          </tr>
@@ -56,6 +57,7 @@ const ListTodos = () => {
          {todos.map(todo => (
              <tr key={todo.todo_id}>
                 <td>{todo.description}</td>
+                <td></td>
                 <td>
                     <EditTodo todo={todo} />
                 </td>
@@ -76,4 +78,3 @@ const ListTodos = () => {
  };
 
  export default ListTodos;
-
