@@ -9,14 +9,16 @@ app.use(express.json()); //req.body
 
 //Routes//
 
+
+/////////Routes for Description/////////
 //create a todo
 
 app.post("/todos", async (req, res) => {
     try {
-        const { description } = req.body;
+        const { description, quantity } = req.body;
         const newTodo = await pool.query(
-            "INSERT INTO todo (description) VALUES($1) RETURNING *",
-            [description]
+            "INSERT INTO todo (description, quantity) VALUES($1, $2) RETURNING *",
+            [description, quantity]
         );
 
         res.json(newTodo.rows[0]);
@@ -53,6 +55,7 @@ app.get("/todos/:id", async (req, res) => {
 
 //update a todo
 
+
 app.put("/todos/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -88,3 +91,12 @@ app.listen(5000, () => {
     console.log("server has started on port 5000");
 });
 
+
+
+
+
+///update increment///
+
+
+
+///update decrement///

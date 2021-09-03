@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 
 import EditTodo from "./EditTodo";
+import Quantity from "./Quantity";
 
 const ListTodos = () => {
   const [todos, setTodos] = useState([]);
@@ -57,7 +58,9 @@ const ListTodos = () => {
          {todos.map(todo => (
              <tr key={todo.todo_id}>
                 <td>{todo.description}</td>
-                <td></td>
+                <td>
+                  <Quantity/>
+                </td>
                 <td>
                     <EditTodo todo={todo} />
                 </td>

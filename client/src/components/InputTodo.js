@@ -2,11 +2,12 @@ import React, { Fragment, useState } from "react";
 
 const InputTodo = () => {
     const [description , setDescription] = useState("");
+    const [quantity , setQuantity] = useState(0);
 
     const onSubmitForm = async e => {
         e.preventDefault();
         try {
-          const body = { description };
+          const body = { description, quantity };
           const response = await fetch("http://localhost:5000/todos", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -36,4 +37,41 @@ const InputTodo = () => {
 };
 
 export default InputTodo;
+
+///////////////////////////Quantity////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
